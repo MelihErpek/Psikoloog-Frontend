@@ -12,7 +12,7 @@ export default function SifreYenile(params) {
         e.preventDefault();
         try {
             const User = { Sifre ,id};
-            await axios.post("https://psikoloog.herokuapp.com/SifreYenile", User);
+            await axios.post("https://psikoloog-backend.vercel.app/SifreYenile", User);
 
 
         } catch (err) {
