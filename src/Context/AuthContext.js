@@ -15,7 +15,7 @@ function AuthContextProvider(props) {
   let token = localStorage.getItem("auth-token");
   async function getLoggedIn() {
     
-    const loggedInRes = await axios.post("https://psikoloog.herokuapp.com/loggedIn",null,
+    const loggedInRes = await axios.post("https://psikoloog-backend.vercel.app/loggedIn",null,
     { headers: { "x-auth-token": token } });
     /*const loggedInRes = await axios.get(
       "https://mern-auth-template-tutorial.herokuapp.com/auth/loggedIn"
@@ -24,7 +24,7 @@ function AuthContextProvider(props) {
     setLoggedIn(loggedInRes.data);
     if (loggedInRes.data) {
 
-      const userRes = await axios.get("https://psikoloog.herokuapp.com/log", {
+      const userRes = await axios.get("https://psikoloog-backend.vercel.app/log", {
         headers: { "x-auth-token": token },
       });
       setUserData({
