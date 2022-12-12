@@ -63,10 +63,10 @@ export default function Login() {
     const responseFacebook = async (response) => {
         try {
             console.log(response)
-            //await axios.post("http://localhost:5000/LoginWithGoogle",data).then(response=>console.log(response));
+            //await axios.post("https://psikoloog-backend.vercel.app/LoginWithGoogle",data).then(response=>console.log(response));
             let userResponse = await axios({
                 method: "POST",
-                url: "https://psikoloog.herokuapp.com/LoginWithFacebook",
+                url: "https://psikoloog-backend.vercel.app/LoginWithFacebook",
                 data: { accessToken: response.accessToken, userID: response.userID }
             })
 
