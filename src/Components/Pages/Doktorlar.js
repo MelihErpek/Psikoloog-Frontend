@@ -94,7 +94,7 @@ export default function Doktorlar() {
 
     useEffect(() => {
 
-        axios.get("https://psikoloog.herokuapp.com/DoktorBul").then(json => setData(json.data));
+        axios.get("https://psikoloog-backend.vercel.app/DoktorBul").then(json => setData(json.data));
 
 
     }, [])
