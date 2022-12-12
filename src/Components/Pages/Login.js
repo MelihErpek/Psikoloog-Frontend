@@ -19,7 +19,7 @@ export default function Login() {
         e.preventDefault();
         try {
             const User = { Mail, Sifre };
-            let userResponse = await axios.post("https://psikoloog.herokuapp.com/Login", User);
+            let userResponse = await axios.post("https://psikoloog-backend.vercel.app/Login", User);
 
             localStorage.setItem("auth-token", userResponse.data.token);
             localStorage.setItem("ıd", userResponse.data.user._id);
@@ -36,13 +36,13 @@ export default function Login() {
             //await axios.post("http://localhost:5000/LoginWithGoogle",data).then(response=>console.log(response));
             let userResponse = await axios({
                 method: "POST",
-                url: "https://psikoloog.herokuapp.com/LoginWithGoogle",
+                url: "https://psikoloog-backend.vercel.app/LoginWithGoogle",
                 data: { tokenId: response.tokenId }
             })
 
             let userResponse2 = await axios({
                 method: "POST",
-                url: "https://psikoloog.herokuapp.com/LoginWithGoogle",
+                url: "https://psikoloog-backend.vercel.app/LoginWithGoogle",
                 data: { tokenId: response.tokenId }
             })
 
