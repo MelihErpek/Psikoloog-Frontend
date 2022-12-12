@@ -8,7 +8,7 @@ export default function SifremiUnuttum() {
         e.preventDefault();
         try {
             const User = { Mail };
-            await axios.post("https://psikoloog.herokuapp.com/SifremiUnuttum", User);
+            await axios.post("https://psikoloog-backend.vercel.app/SifremiUnuttum", User);
 
 
         } catch (err) {
