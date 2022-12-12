@@ -61,7 +61,7 @@ export default function Profil() {
         try {
             const tarih2 = { Mail, gercekTarihBaslangic, gercekTarihBitis };
 
-            await axios.post("https://psikoloog.herokuapp.com/Calendar", tarih2);
+            await axios.post("https://psikoloog-backend.vercel.app/Calendar", tarih2);
         } catch (err) {
             alert("Bu Mail Daha Önce Kullanılmıştır Lütfen Farklı Bir Mail Belirleyiniz")
         }
@@ -73,7 +73,7 @@ export default function Profil() {
 
         try {
 
-            await axios.post("https://psikoloog.herokuapp.com/TarihGetir", { id }).then(json => json.data.tarihler.map(item => deneme(item)));
+            await axios.post("https://psikoloog-backend.vercel.app/TarihGetir", { id }).then(json => json.data.tarihler.map(item => deneme(item)));
 
         } catch (err) {
             alert("Bu Mail Daha Önce Kullanılmıştır Lütfen Farklı Bir Mail Belirleyiniz")
