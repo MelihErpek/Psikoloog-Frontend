@@ -42,7 +42,7 @@ export default function DigerProfil(params) {
     const getir = async () => {
 
         try {
-            await axios.post("https://psikoloog.herokuapp.com/ProfilBul", { id }).then((json => setData(json.data) + json.data.user.Randevular.map(item => tarihEkle(item))));
+            await axios.post("https://psikoloog-backend.vercel.app/ProfilBul", { id }).then((json => setData(json.data) + json.data.user.Randevular.map(item => tarihEkle(item))));
         } catch (err) {
             alert("Bu Mail Daha Önce Kullanılmıştır Lütfen Farklı Bir Mail Belirleyiniz")
         }
