@@ -42,8 +42,8 @@ export default function Register() {
         try {
             const newUser = { AdSoyad, Mail, Sifre, baseImage };
             const User = { Mail, Sifre };
-            await axios.post("https://psikoloog.herokuapp.com/Register", newUser).then(setError("Başarıyla Kayıt Olundu."));
-            let userResponse = await axios.post("https://psikoloog.herokuapp.com/Login", User);
+            await axios.post("https://psikoloog-backend.vercel.app/Register", newUser).then(setError("Başarıyla Kayıt Olundu."));
+            let userResponse = await axios.post("https://psikoloog-backend.vercel.app/Login", User);
 
             localStorage.setItem("auth-token", userResponse.data.token);
             localStorage.setItem("ıd", userResponse.data.user._id);
@@ -68,16 +68,16 @@ export default function Register() {
     const responseSuccessGoogle = async (response) => {
         try {
 
-            //await axios.post("http://localhost:5000/LoginWithGoogle",data).then(response=>console.log(response));
+            //await axios.post("https://psikoloog-backend.vercel.app/LoginWithGoogle",data).then(response=>console.log(response));
             let userResponse = await axios({
                 method: "POST",
-                url: "https://psikoloog.herokuapp.com/LoginWithGoogle",
+                url: "https://https://psikoloog-backend.vercel.app/LoginWithGoogle",
                 data: { tokenId: response.tokenId }
             })
 
             let userResponse2 = await axios({
                 method: "POST",
-                url: "https://psikoloog.herokuapp.com/LoginWithGoogle",
+                url: "https://psikoloog-backend.vercel.app/LoginWithGoogle",
                 data: { tokenId: response.tokenId }
             })
 
@@ -98,10 +98,10 @@ export default function Register() {
     const responseFacebook = async (response) => {
         try {
             console.log(response)
-            //await axios.post("http://localhost:5000/LoginWithGoogle",data).then(response=>console.log(response));
+            //await axios.post("https://psikoloog-backend.vercel.app/LoginWithGoogle",data).then(response=>console.log(response));
             let userResponse = await axios({
                 method: "POST",
-                url: "https://psikoloog.herokuapp.com/LoginWithFacebook",
+                url: "https://psikoloog-backend.vercel.app/LoginWithFacebook",
                 data: { accessToken: response.accessToken, userID: response.userID }
             })
 
