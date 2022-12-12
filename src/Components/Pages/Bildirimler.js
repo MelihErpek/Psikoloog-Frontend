@@ -18,7 +18,7 @@ export default function Bildirimler() {
     }
     useEffect(() => {
        
-         axios.post("https://psikoloog.herokuapp.com/BildirimGetir", { id }).then(json=>setData(json.data.Bildirimler))
+         axios.post("https://psikoloog-backend.vercel.app/BildirimGetir", { id }).then(json=>setData(json.data.Bildirimler))
     }, [id])
     return (
         <div>
