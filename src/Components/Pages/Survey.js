@@ -58,7 +58,7 @@ export default function Survey() {
     }
     const Finished =() =>{
         useState(async()=>{
-             const a = await axios.post("https://psikoloog.herokuapp.com/ProfilBul", { id });
+             const a = await axios.post("https://psikoloog-backend.vercel.app/ProfilBul", { id });
              setData(a.data.user)
         },[])
 
